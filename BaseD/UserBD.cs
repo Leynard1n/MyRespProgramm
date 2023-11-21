@@ -5,7 +5,7 @@ using System.Text.Json;
 class UserBD
 {
     Dictionary<string, User> users = new();
-
+    
      public UserBD()
      {
          if (File.Exists("FileONE.json"))
@@ -17,10 +17,9 @@ class UserBD
         List<User> result = new();
         foreach (var user in users.Values)
         {
-            if (user.FirstName.Contains(text) ||
-                    user.LastName.Contains(text)) ;
-            else
-                user.NumberPhone.Contains(text);
+            if (user.FirstName.Contains(text)||
+                user.LastName.Contains(text)||
+                user.FullName.Contains(text))
                 result.Add(user);
         }
         return result;
@@ -49,6 +48,16 @@ class UserBD
         users.Remove(user.UID);
         Save();
         return true;
+    }
+    internal List<User> AllList(string text)
+    {
+        List<User> result = new();
+        foreach (var user in users.Values)
+        {
+            
+                result.Add(user);
+        }
+        return result;
     }
 
     void Save()

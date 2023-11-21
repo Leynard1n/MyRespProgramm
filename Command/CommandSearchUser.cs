@@ -15,6 +15,11 @@
             Console.WriteLine("пользователь не найден ");
         else
             for (int i = 0; i < users.Count; i++)
-            { Console.WriteLine($"{i + 1}. {users[i].FirstName} {users[i].LastName} UID: {users[i].UID}"); }
+            {
+                Console.WriteLine($"{i + 1}. {users[i].FirstName} {users[i].LastName}" +
+                $" ,{users[i].NumberPhone} ,{users[i].Addres} UID: {users[i].UID}");
+                Console.WriteLine();
+            }
+        
     }
 }

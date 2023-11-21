@@ -9,6 +9,7 @@ class CommandManager
         do
         {
             Console.WriteLine();
+            Console.WriteLine("Help - справка");
             Console.WriteLine("Введите Одну из команд");
 
 
