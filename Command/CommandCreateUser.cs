@@ -15,8 +15,6 @@
         newUser.FirstName = Console.ReadLine();
         Console.WriteLine("Укажите фамилию...");
         newUser.LastName = Console.ReadLine();
-        Console.WriteLine("Укажите оператора связи - (Megafone,MTC,Biline,TELE2,Yota,Tinkoff и т.д");
-        newUser.Operator = Console.ReadLine();
         Console.WriteLine("Укажите Номер Телефона");
         newUser.NumberPhone = Console.ReadLine();
         Console.WriteLine("Укажите Адресс - (Город,Улица,дом,этаж,квартира)");
