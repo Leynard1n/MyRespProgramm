@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Text.Json;
 
 class UserBD
@@ -17,7 +18,9 @@ class UserBD
         foreach (var user in users.Values)
         {
             if (user.FirstName.Contains(text) ||
-                    user.LastName.Contains(text))
+                    user.LastName.Contains(text)) ;
+            else
+                user.NumberPhone.Contains(text);
                 result.Add(user);
         }
         return result;

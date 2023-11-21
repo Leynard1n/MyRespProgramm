@@ -33,9 +33,9 @@ class CommandManager
                 Command[command].command.Execute();
         }
     }
-    public void RegisterCommand(string command,string descr, CommandUser commandUser)
+    public void RegisterCommand(string command, string descr, CommandUser commandUser)
     {
-        descr.Add(command, commandUser);
+        Command.Add(command, (descr, commandUser));
     }
-
 }
+    

@@ -4,3 +4,4 @@ CommandManager commandManager = new CommandManager();
 
 
 commandManager.RegisterCommand("Create", new CommandCreateUser(userBD));
+commandManager.RegisterCommand("Search", new CommandCreateUser(userBD));
