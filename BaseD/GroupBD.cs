@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.Text.Json;
 using System.ComponentModel.Design;
+using System.Text.Json;
 
 class GroupBD
 {
@@ -8,9 +8,9 @@ class GroupBD
 
     public GroupBD()
     {
-        if (File.Exists("FileTWO.json"))
-            groups = JsonSerializer.Deserialize<Dictionary<string, Group>>(File.ReadAllText("FileTWO.json"));//load file (json)
-        else File.Create("FileTWO.json");
+        if (File.Exists("TWOFile.json"))
+            groups = JsonSerializer.Deserialize<Dictionary<string, Group>>(File.ReadAllText("TWOFile.json"));//load file (json)
+        else File.Create("TWOFile.json");
     }
 
     internal List<Group> SearchGroup(string text)
@@ -59,7 +59,7 @@ class GroupBD
 
     void Save()
     {
-        File.WriteAllText("FileTWO.json", JsonSerializer.Serialize(groups));
+        File.WriteAllText("TWO.json", JsonSerializer.Serialize(groups));
         //save file(json)
     }
 }

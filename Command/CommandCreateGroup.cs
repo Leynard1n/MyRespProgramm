@@ -1,10 +1,9 @@
-﻿using System.Text.RegularExpressions;
-
+﻿
 class CommandCreateGroup : CommandGroup
 {
     private GroupBD groupBD;
 
-    public CommandCreateGroup(GroupBD groupDB)
+    public CommandCreateGroup(GroupBD groupBD)
     {
         this.groupBD = groupBD;
     }

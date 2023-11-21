@@ -27,7 +27,8 @@ class Program
         commandManager.RegisterCommandG("FindG","Ищет Оператора", new CommandSearchGroup(groupBD));
         commandManager.RegisterCommandG("DelG", "Удаляет Оператора",new CommandDeleteGroup(groupBD));
         commandManager.RegisterCommandG("UpdateG","Обнавляет данные Операторов", new CommandEditGroup(groupBD));
-
+        commandManager.RegisterCommandG("Add", "Добавляет В группу" +
+            "", new CommandAddTOGroup(groupBD));
 
 
         commandManager.Start();
