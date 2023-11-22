@@ -10,7 +10,8 @@ class UserBD
      {
          if (File.Exists("FileONE.json"))
              users = JsonSerializer.Deserialize<Dictionary<string, User>>(File.ReadAllText("FileONE.json"));//load file (json)
-     }
+        else File.Create("FileONE.json");
+    }
     
     internal List<User> Search(string text)
     {

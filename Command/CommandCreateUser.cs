@@ -21,7 +21,7 @@
         newUser.NumberPhone = Console.ReadLine();
         Console.WriteLine("Укажите Адресс - (Город,Улица,дом,этаж,квартира)");
         newUser.Addres = Console.ReadLine();
-        newUser.FullName = v + c;
+        newUser.FullName = v + " " + c;
         if (userBD.Update(newUser))
             Console.WriteLine("Пользотель создан!");
         else

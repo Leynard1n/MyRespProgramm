@@ -13,6 +13,6 @@
         List<Group> groups = groupBD.SearchGroup(Console.ReadLine());
         for (int i = 0; i < groups.Count; i++)
             groupBD.DeleteGroup(groups[i]);
-        Console.WriteLine("Группа Была Удалена!");
+        Console.WriteLine("Оператор Был Удален!");
     }
 }

@@ -11,8 +11,9 @@ class Program
     public static void Main()
     {
         UserBD userBD = new UserBD();
-        CommandManager commandManager = new CommandManager();
         GroupBD groupBD = new GroupBD();
+        CommandManager commandManager = new CommandManager();
+        
 
         //Команды для User
 
@@ -27,9 +28,9 @@ class Program
         commandManager.RegisterCommandG("FindG","Ищет Оператора", new CommandSearchGroup(groupBD));
         commandManager.RegisterCommandG("DelG", "Удаляет Оператора",new CommandDeleteGroup(groupBD));
         commandManager.RegisterCommandG("UpdateG","Обнавляет данные Операторов", new CommandEditGroup(groupBD));
-        commandManager.RegisterCommandG("Add", "Добавляет В группу" +
-            "", new CommandAddTOGroup(groupBD));
-
+        commandManager.RegisterCommandG("Add", "Добавляет В группу", new CommandAddTOGroup(groupBD));
+        commandManager.RegisterCommandG("ListG", "Показывает Всех Операторов", new CommandAllListG(groupBD));
+        commandManager.RegisterCommandG("Rem", "Удаляет пользователя из группы", new CommandRemG(groupBD));
 
         commandManager.Start();
     }

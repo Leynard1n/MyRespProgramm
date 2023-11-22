@@ -10,13 +10,13 @@ class CommandCreateGroup : CommandGroup
 
     public override void Execute()
     {
-        Console.WriteLine("Создание оператора...");
+        Console.WriteLine("Создание Оператора...");
         Group newGroup = groupBD.CreateGroup();
-        Console.WriteLine("Укажите Оператора...");
+        Console.WriteLine("Укажите Название...");
         newGroup.Operator = Console.ReadLine();
-        if (!groupBD.UpdateGroup(newGroup))
-            Console.WriteLine("Оператор создан!");
+        if (groupBD.UpdateGroup(newGroup))
+            Console.WriteLine("Пользотель создан!");
         else
-            Console.WriteLine("Возникли невозможные! Информация уничтожена.");
+            Console.WriteLine("Возникли невозможные ошибки! Информация полностью уничтожена.");
     }
 }

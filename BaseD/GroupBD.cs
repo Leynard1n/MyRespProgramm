@@ -8,9 +8,9 @@ class GroupBD
 
     public GroupBD()
     {
-        if (File.Exists("TWOFile.json"))
-            groups = JsonSerializer.Deserialize<Dictionary<string, Group>>(File.ReadAllText("TWOFile.json"));//load file (json)
-        else File.Create("TWOFile.json");
+        if (File.Exists("FileG.json"))
+            groups = JsonSerializer.Deserialize<Dictionary<string, Group>>(File.ReadAllText("FileG.json"));//load file (json)
+        else File.Create("FileG.json");
     }
 
     internal List<Group> SearchGroup(string text)
@@ -26,9 +26,9 @@ class GroupBD
 
     public bool UpdateGroup(Group group)
     {
-        if (!groups.ContainsKey(group.Operator))
+        if (!groups.ContainsKey(group.UID))
             return false;
-        groups[group.Operator] = group;
+        groups[group.UID] = group;
         Save();
         return true;
     }
@@ -37,6 +37,14 @@ class GroupBD
         if (!groups.ContainsKey(group.User))
             return false;
         groups[group.User] = group;
+        Save();
+        return true;
+    }
+    public bool RemGroup(Group group)
+    {
+        if (!groups.ContainsKey(group.Operator))
+            return false;
+        groups.Remove(group.User);
         Save();
         return true;
     }
@@ -56,10 +64,20 @@ class GroupBD
         Save();
         return true;
     }
+    internal List<Group> AllListG(string text)
+    {
+        List<Group> result = new();
+        foreach (var group in groups.Values)
+        {
+
+            result.Add(group);
+        }
+        return result;
+    }
 
     void Save()
     {
-        File.WriteAllText("TWO.json", JsonSerializer.Serialize(groups));
+        File.WriteAllText("FileG.json", JsonSerializer.Serialize(groups));
         //save file(json)
     }
 }
