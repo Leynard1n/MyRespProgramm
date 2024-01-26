@@ -9,7 +9,7 @@
 
     public override void Execute()
     {
-        Console.Write("Введите Имя Оператора для Удаления: ");
+        Console.Write("Введите название подарка для удаления из списка: ");
         List<Group> groups = groupBD.SearchGroup(Console.ReadLine());
         for (int i = 0; i < groups.Count; i++)
             groupBD.DeleteGroup(groups[i]);

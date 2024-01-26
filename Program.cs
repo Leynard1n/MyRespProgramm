@@ -8,6 +8,13 @@ using System.Xml.Linq;
 // Поиск изменение и удаление данных про оператору связи ( номер телефона , Имя фамилия, Адресс прописки или факт и оператор связи)
 class Program
 {
+   
+       
+    
+
+    
+   
+   
     public static void Main()
     {
         UserBD userBD = new UserBD();
@@ -24,14 +31,14 @@ class Program
             commandManager.RegisterCommand("List", "Показывает Всех пользователей", new CommandAllListUser(userBD));
 
         //Команды для Group
-        commandManager.RegisterCommandG("CreateG","Создаёт Оператора", new CommandCreateGroup(groupBD));
-        commandManager.RegisterCommandG("FindG","Ищет Оператора", new CommandSearchGroup(groupBD));
-        commandManager.RegisterCommandG("DelG", "Удаляет Оператора",new CommandDeleteGroup(groupBD));
-        commandManager.RegisterCommandG("UpdateG","Обнавляет данные Операторов", new CommandEditGroup(groupBD));
-        commandManager.RegisterCommandG("Add", "Добавляет В группу", new CommandAddTOGroup(groupBD));
-        commandManager.RegisterCommandG("ListG", "Показывает Всех Операторов", new CommandAllListG(groupBD));
-        commandManager.RegisterCommandG("Rem", "Удаляет пользователя из группы", new CommandRemG(groupBD));
-
+            commandManager.RegisterCommandG("CreateG", "Создаёт подарок", new CommandCreateGroup(groupBD)) ;
+            commandManager.RegisterCommandG("FindG","Ищет подарок", new CommandSearchGroup(groupBD));
+            commandManager.RegisterCommandG("DelG", "Удаляет подарок",new CommandDeleteGroup(groupBD));
+            commandManager.RegisterCommandG("UpdateG","Обнавляет данные подарков", new CommandEditGroup(groupBD));
+            commandManager.RegisterCommandG("Add", "Добавляет В группу", new CommandAddTOGroup(groupBD));
+            commandManager.RegisterCommandG("ListG", "Показывает Все подарки", new CommandAllListG(groupBD));
+            commandManager.RegisterCommandG("Rem", "Удаляет пользователя из группы", new CommandRemG(groupBD));
+         
         commandManager.Start();
-    }
+    } 
 }

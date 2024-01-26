@@ -10,12 +10,12 @@ class CommandCreateGroup : CommandGroup
 
     public override void Execute()
     {
-        Console.WriteLine("Создание Оператора...");
+        Console.WriteLine("Выбор подарка...");
         Group newGroup = groupBD.CreateGroup();
         Console.WriteLine("Укажите Название...");
         newGroup.Operator = Console.ReadLine();
         if (groupBD.UpdateGroup(newGroup))
-            Console.WriteLine("Пользотель создан!");
+            Console.WriteLine("Подарок создан!");
         else
             Console.WriteLine("Возникли невозможные ошибки! Информация полностью уничтожена.");
     }

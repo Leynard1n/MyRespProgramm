@@ -11,13 +11,8 @@ class CommandManager
         do
         {
             Console.WriteLine();
-            Console.WriteLine("Help - справка");
-            Console.WriteLine("Введите команду");
-            
-                
-
-
-            ;
+            Console.WriteLine("Help - ответ");
+            Console.WriteLine("Введите номер программы");
             
             command  = Console.ReadLine();
             
@@ -33,20 +28,54 @@ class CommandManager
         string d = Console.ReadLine();
         if (Command.ContainsKey(command))
         {
-            if (d == "1")
+            if (d == "Help")
                 Console.WriteLine(Command[command].descr);
             else
                 Command[command].command.Execute();
         }
         if (commandsGroup.ContainsKey(command))
         {
-            if (d == "1")
+            if (d == "Help")
                 Console.WriteLine(commandsGroup[command].descr);
             else
                 commandsGroup[command].command.Execute();
         }
     }
     
+    /*public void Help()
+    {
+        string c, v;
+        
+        Console.WriteLine("Введите команду...");
+        List<string> list1 = new List<string>() { "Create", "Del", "Update", "List", "Find", "CreateG", "FindG", "DelG", "UpdateG", "ListG", "Rem", "Add" };
+        v =c=Console.ReadLine();
+        if (Command.ContainsKey(c)) 
+        {
+                if (c == "Help")
+            {
+                foreach (string s in list1) Console.WriteLine(Command[s].descr);
+            }
+            else
+                Command[c].command.Execute();
+        }
+        if (commandsGroup.ContainsKey(c))
+        {
+            if (c == "Help")
+                Console.WriteLine(commandsGroup.ToList());
+            else
+                commandsGroup[c].command.Execute();
+        }
+    }*/
+    public static void List()
+    {
+        List<string> list1 = new List<string>() { "Create", "Del", "Update", "List", "Find", "CreateG", "FindG", "DelG", "UpdateG", "ListG", "Rem", "Add"};
+       
+
+        
+        {
+            foreach (string s in list1) Console.WriteLine(s);
+        }
+    }
 
     public void RegisterCommand(string command, string descr, CommandUser commandUser)
     {
